@@ -34,12 +34,15 @@ mask = cv.imread("assets/mask.png") # For blocking out noise
 width = int(vid.get(cv.CAP_PROP_FRAME_WIDTH))
 height = int(vid.get(cv.CAP_PROP_FRAME_HEIGHT))
 fps = vid.get(cv.CAP_PROP_FPS)
-video_writer = cv.VideoWriter(("result.mp4"), cv.VideoWriter_fourcc("m", "p", "4", "v"),
+video_writer = cv.VideoWriter("result.mp4", cv.VideoWriter_fourcc("m", "p", "4", "v"),
                               fps, (width, height))
 
 while True:
     ref, frame = vid.read()
-    frame_region = cv.bitwise_and(frame, mask)
+    try:
+        frame_region = cv.bitwise_and(frame, mask)
+    except Exception:
+        break
     result = model(frame_region, stream=True)
 
     # Total count graphics

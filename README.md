@@ -2,6 +2,8 @@
 
 A real-time vehicle traffic counting system using YOLOv8 and SORT tracking algorithm. Detects, tracks, and counts vehicles crossing predefined lanes in traffic camera footage.
 
+<video src="result.mp4" width="500" height="300" controls></video>
+
 ## Features
 
 - **Real-time Vehicle Detection**: Uses YOLOv8-Large model to detect cars, trucks, buses, and motorbikes
