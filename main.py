@@ -127,5 +127,5 @@ while True:
 
 # Closing down everything
 vid.release()
-cv.destroyAllWindows()
 video_writer.release()
+cv.destroyAllWindows()
